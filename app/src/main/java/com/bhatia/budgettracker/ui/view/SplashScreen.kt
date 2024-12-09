@@ -54,7 +54,7 @@ fun SplashScreen(navController: NavController, appViewModel: AppViewModel) {
                         contentScale = ContentScale.FillWidth
                     )
                     Text(
-                        text = "Budget Tracker",
+                        text = "Trackify",
                         fontFamily = pacificoFamily,
                         fontSize = 30.sp,
                         color = Color.White

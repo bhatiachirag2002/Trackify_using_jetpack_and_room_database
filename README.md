@@ -9,17 +9,6 @@
 
 ---
 
-## 🎥 App Demo
-
-Experience **Trackify** in action! View the app's smooth interface and key features in the recording below:
-
-<div align="center">
-  <video src="screenshot/Screen_Recording_20260209_125516_Trackify%20-%20Budget%20Tracker.mp4" width="320" autoplay loop muted playsinline>
-    Your browser does not support the video tag.
-  </video>
-</div>
-
----
 
 ## ✨ Features
 

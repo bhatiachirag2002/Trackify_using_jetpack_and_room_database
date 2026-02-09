@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker
+package com.bhatia.trackify
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

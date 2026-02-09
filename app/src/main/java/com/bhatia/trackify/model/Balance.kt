@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.model
+package com.bhatia.trackify.model
 
 import android.os.Parcelable
 import androidx.room.Entity

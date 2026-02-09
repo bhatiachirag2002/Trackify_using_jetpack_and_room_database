@@ -1,11 +1,11 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Category
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.bhatia.budgettracker.model.Transaction
-import com.bhatia.budgettracker.ui.theme.TealGreen
+import com.bhatia.trackify.model.Transaction
+import com.bhatia.trackify.ui.theme.TealGreen
 
 fun getTypeColor(transaction: Transaction): Color {
     return if (transaction.type == "Credit") TealGreen else Color.Red

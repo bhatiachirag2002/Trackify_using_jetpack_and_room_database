@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.theme
+package com.bhatia.trackify.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

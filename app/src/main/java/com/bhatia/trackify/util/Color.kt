@@ -1,15 +1,15 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.Color
-import com.bhatia.budgettracker.ui.theme.Blue
-import com.bhatia.budgettracker.ui.theme.BlueLight
-import com.bhatia.budgettracker.ui.theme.RaspberryRed
-import com.bhatia.budgettracker.ui.theme.RaspberryRedLight
-import com.bhatia.budgettracker.ui.theme.TealGreen
-import com.bhatia.budgettracker.ui.theme.TealGreenLight
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.ui.theme.Blue
+import com.bhatia.trackify.ui.theme.BlueLight
+import com.bhatia.trackify.ui.theme.RaspberryRed
+import com.bhatia.trackify.ui.theme.RaspberryRedLight
+import com.bhatia.trackify.ui.theme.TealGreen
+import com.bhatia.trackify.ui.theme.TealGreenLight
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @Composable
 fun background(appViewModel: AppViewModel): Color {

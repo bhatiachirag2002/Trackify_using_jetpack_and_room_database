@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 
 import androidx.compose.foundation.Image
@@ -21,10 +21,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.bhatia.budgettracker.R
-import com.bhatia.budgettracker.ui.theme.pacificoFamily
-import com.bhatia.budgettracker.util.themeColor
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.R
+import com.bhatia.trackify.ui.theme.pacificoFamily
+import com.bhatia.trackify.util.themeColor
+import com.bhatia.trackify.viewmodel.AppViewModel
 import kotlinx.coroutines.delay
 
 @Composable

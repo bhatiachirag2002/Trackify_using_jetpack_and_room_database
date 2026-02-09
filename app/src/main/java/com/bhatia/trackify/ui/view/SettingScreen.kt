@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -34,13 +34,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bhatia.budgettracker.ui.theme.TealGreen
-import com.bhatia.budgettracker.ui.theme.latoFamily
-import com.bhatia.budgettracker.util.TransactionData
-import com.bhatia.budgettracker.util.background
-import com.bhatia.budgettracker.util.blackColor
-import com.bhatia.budgettracker.util.whiteColor
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.ui.theme.TealGreen
+import com.bhatia.trackify.ui.theme.latoFamily
+import com.bhatia.trackify.util.TransactionData
+import com.bhatia.trackify.util.background
+import com.bhatia.trackify.util.blackColor
+import com.bhatia.trackify.util.whiteColor
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @Composable
 fun SettingScreen(appViewModel: AppViewModel) {

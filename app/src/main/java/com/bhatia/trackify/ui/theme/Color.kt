@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.theme
+package com.bhatia.trackify.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

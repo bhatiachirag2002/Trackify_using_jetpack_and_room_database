@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.LibraryBooks
@@ -63,11 +63,11 @@ import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material.icons.filled.Wifi
 import androidx.compose.material.icons.filled.WorkOutline
 import androidx.compose.ui.graphics.Color
-import com.bhatia.budgettracker.model.ColorCategory
-import com.bhatia.budgettracker.model.TransactionCategory
-import com.bhatia.budgettracker.ui.theme.Blue
-import com.bhatia.budgettracker.ui.theme.RaspberryRed
-import com.bhatia.budgettracker.ui.theme.TealGreen
+import com.bhatia.trackify.model.ColorCategory
+import com.bhatia.trackify.model.TransactionCategory
+import com.bhatia.trackify.ui.theme.Blue
+import com.bhatia.trackify.ui.theme.RaspberryRed
+import com.bhatia.trackify.ui.theme.TealGreen
 
 object TransactionData {
     val transactionTypes = listOf("Select Transaction Type", "Credit", "Debit")

@@ -1,6 +1,5 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DeleteForever
@@ -26,8 +26,8 @@ import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,9 +38,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bhatia.budgettracker.model.Transaction
-import com.bhatia.budgettracker.ui.theme.TealGreen
-import com.bhatia.budgettracker.ui.theme.latoFamily
+import com.bhatia.trackify.model.Transaction
+import com.bhatia.trackify.ui.theme.TealGreen
+import com.bhatia.trackify.ui.theme.latoFamily
 
 @Composable
 fun TransactionCard(
@@ -54,7 +54,6 @@ fun TransactionCard(
     cardColors: Color,
     textColor: Color,
 ) {
-
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -62,7 +61,6 @@ fun TransactionCard(
             .padding(horizontal = 6.dp, vertical = 4.dp),
         colors = CardDefaults.cardColors(containerColor = cardColors),
         elevation = CardDefaults.cardElevation(10.dp)
-
     ) {
         Row(
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 7.dp),
@@ -113,7 +111,6 @@ fun TransactionCard(
                 color = typeColor
             )
         }
-
     }
 }
 
@@ -125,92 +122,66 @@ fun TransactionColumn(
     onDeleteTransaction: (Transaction) -> Unit,
     onEditTransaction: (Transaction) -> Unit
 ) {
-    val transactionsState =
-        remember { mutableStateListOf<Transaction>().apply { addAll(filteredTransactions) } }
-    val selectedTransaction = remember { mutableStateOf<Transaction?>(null) }
+    val transactionsState = remember { mutableStateListOf<Transaction>() }
+
+    LaunchedEffect(filteredTransactions) {
+        transactionsState.clear()
+        transactionsState.addAll(filteredTransactions)
+    }
 
     LazyColumn {
-        items(transactionsState.size) { index ->
-            val transaction = transactionsState[index]
+        itemsIndexed(
+            items = transactionsState,
+            key = { _, transaction -> transaction.id }
+        ) { index, transaction ->
             val typeColor = getTypeColor(transaction)
             val categoryColor = getCategoryColor(transaction)
             val categoryIcon = getCategoryIcon(transaction)
             val formattedDate = dateFormater(transaction.timeStamp)
+
             val dismissState = rememberSwipeToDismissBoxState(
-                confirmValueChange = {
-                    when (it) {
-                        SwipeToDismissBoxValue.StartToEnd -> {
-                            selectedTransaction.value = transaction
-                            onEditTransaction(selectedTransaction.value!!)
-                            false
-                        }
-
+                confirmValueChange = { value ->
+                    when (value) {
                         SwipeToDismissBoxValue.EndToStart -> {
-                            selectedTransaction.value = transaction
-                            onDeleteTransaction(selectedTransaction.value!!)
-                            transactionsState.remove(selectedTransaction.value)
+                            onDeleteTransaction(transaction)
+                            true
+                        }
+                        SwipeToDismissBoxValue.StartToEnd -> {
                             false
                         }
-
                         else -> false
                     }
                 }
             )
 
+
+            LaunchedEffect(dismissState.targetValue) {
+                if (dismissState.targetValue == SwipeToDismissBoxValue.StartToEnd) {
+                    onEditTransaction(transaction)
+                    dismissState.reset()
+                }
+            }
+
             SwipeToDismissBox(
                 state = dismissState,
                 backgroundContent = {
-                    // Safely check the target value for determining swipe direction
-                    val isSwipingToStart =
-                        dismissState.targetValue == SwipeToDismissBoxValue.StartToEnd
-                    val isSwipingToEnd =
-                        dismissState.targetValue == SwipeToDismissBoxValue.EndToStart
-
-
-                    when {
-                        isSwipingToStart -> {
+                    val direction = dismissState.dismissDirection
+                    when (direction) {
+                        SwipeToDismissBoxValue.StartToEnd -> {
                             BackgroundCard(
                                 bgColor = TealGreen,
                                 icon = Icons.Default.Edit,
                                 arrangement = Arrangement.Start
                             )
                         }
-
-                        isSwipingToEnd -> {
+                        SwipeToDismissBoxValue.EndToStart -> {
                             BackgroundCard(
                                 bgColor = Color.Red,
                                 icon = Icons.Default.DeleteForever,
                                 arrangement = Arrangement.End
                             )
                         }
-
-                        else -> Card(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(70.dp)
-                                .padding(horizontal = 6.dp, vertical = 4.dp),
-                            elevation = CardDefaults.cardElevation(defaultElevation = 12.dp),
-                        ) {
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxSize(),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.Center
-                            ) {
-                                Box(
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .fillMaxHeight()
-                                        .background(TealGreen)
-                                ) {}
-                                Box(
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .fillMaxHeight()
-                                        .background(Color.Red)
-                                ) {}
-                            }
-                        }
+                        else -> Box(Modifier.fillMaxSize())
                     }
                 },
                 content = {
@@ -223,18 +194,15 @@ fun TransactionColumn(
                         backgroundColor = categoryColor,
                         cardColors = black,
                         textColor = white,
-                        modifier = if (index == filteredTransactions.size - 1) Modifier.padding(
+                        modifier = if (index == transactionsState.size - 1) Modifier.padding(
                             bottom = 75.dp
                         ) else Modifier
                     )
                 }
             )
-
-
         }
     }
 }
-
 
 @Composable
 fun BackgroundCard(bgColor: Color, icon: ImageVector, arrangement: Arrangement.Horizontal) {
@@ -244,25 +212,21 @@ fun BackgroundCard(bgColor: Color, icon: ImageVector, arrangement: Arrangement.H
             .height(70.dp)
             .padding(horizontal = 6.dp, vertical = 4.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 12.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = bgColor
-        )
+        colors = CardDefaults.cardColors(containerColor = bgColor)
     ) {
         Row(
             modifier = Modifier
-                .padding(horizontal = 10.dp, vertical = 7.dp)
+                .padding(horizontal = 20.dp) // Thoda extra padding icon ke liye
                 .fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = arrangement
         ) {
-
             Icon(
                 imageVector = icon,
                 contentDescription = null,
                 tint = Color.White,
-                modifier = Modifier.size(35.dp)
+                modifier = Modifier.size(30.dp)
             )
-
         }
     }
 }

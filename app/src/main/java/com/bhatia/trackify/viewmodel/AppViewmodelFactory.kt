@@ -1,8 +1,8 @@
-package com.bhatia.budgettracker.viewmodel
+package com.bhatia.trackify.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.bhatia.budgettracker.repository.AppRepo
+import com.bhatia.trackify.repository.AppRepo
 
 
 class AppViewModelFactory(

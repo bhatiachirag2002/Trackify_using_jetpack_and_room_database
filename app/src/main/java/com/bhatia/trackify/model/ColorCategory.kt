@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.model
+package com.bhatia.trackify.model
 
 
 import androidx.compose.ui.graphics.Color

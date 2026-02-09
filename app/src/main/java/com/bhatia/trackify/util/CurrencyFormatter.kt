@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import java.text.DecimalFormat
 

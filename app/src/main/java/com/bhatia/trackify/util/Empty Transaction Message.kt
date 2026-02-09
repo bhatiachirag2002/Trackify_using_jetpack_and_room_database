@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,8 +8,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.bhatia.budgettracker.ui.theme.latoFamily
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.ui.theme.latoFamily
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @Composable
 fun EmptyTransactionMessage(appViewModel: AppViewModel) {

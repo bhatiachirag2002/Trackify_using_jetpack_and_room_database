@@ -1,10 +1,10 @@
-package com.bhatia.budgettracker.viewmodel
+package com.bhatia.trackify.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bhatia.budgettracker.model.Balance
-import com.bhatia.budgettracker.model.Transaction
-import com.bhatia.budgettracker.repository.AppRepo
+import com.bhatia.trackify.model.Balance
+import com.bhatia.trackify.model.Transaction
+import com.bhatia.trackify.repository.AppRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

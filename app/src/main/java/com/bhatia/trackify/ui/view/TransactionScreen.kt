@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -31,16 +31,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.bhatia.budgettracker.model.Transaction
-import com.bhatia.budgettracker.util.EmptyTransactionMessage
-import com.bhatia.budgettracker.util.TransactionChips
-import com.bhatia.budgettracker.util.TransactionColumn
-import com.bhatia.budgettracker.util.UpdateBalance
-import com.bhatia.budgettracker.util.background
-import com.bhatia.budgettracker.util.blackColor
-import com.bhatia.budgettracker.util.themeColor
-import com.bhatia.budgettracker.util.whiteColor
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.model.Transaction
+import com.bhatia.trackify.util.EmptyTransactionMessage
+import com.bhatia.trackify.util.TransactionChips
+import com.bhatia.trackify.util.TransactionColumn
+import com.bhatia.trackify.util.UpdateBalance
+import com.bhatia.trackify.util.background
+import com.bhatia.trackify.util.blackColor
+import com.bhatia.trackify.util.themeColor
+import com.bhatia.trackify.util.whiteColor
+import com.bhatia.trackify.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

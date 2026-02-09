@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -18,8 +18,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
-import com.bhatia.budgettracker.ui.theme.latoFamily
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.ui.theme.latoFamily
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @Composable
 fun TextFieldDropdown(

@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @Composable
 fun TransactionChips(

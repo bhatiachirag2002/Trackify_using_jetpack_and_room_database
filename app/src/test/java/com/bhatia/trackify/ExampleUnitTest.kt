@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker
+package com.bhatia.trackify
 
 import org.junit.Test
 

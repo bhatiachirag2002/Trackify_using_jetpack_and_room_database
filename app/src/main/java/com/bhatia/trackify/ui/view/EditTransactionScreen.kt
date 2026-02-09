@@ -1,6 +1,6 @@
 @file:Suppress("UNUSED_EXPRESSION")
 
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -43,20 +43,20 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.bhatia.budgettracker.model.Transaction
-import com.bhatia.budgettracker.ui.theme.latoFamily
-import com.bhatia.budgettracker.util.CurrencyFormatter
-import com.bhatia.budgettracker.util.DatePickerDropdown
-import com.bhatia.budgettracker.util.OutlineTextField
-import com.bhatia.budgettracker.util.TransactionData.creditCategories
-import com.bhatia.budgettracker.util.TransactionData.debitCategories
-import com.bhatia.budgettracker.util.UpdateBalance
-import com.bhatia.budgettracker.util.background
-import com.bhatia.budgettracker.util.blackColor
-import com.bhatia.budgettracker.util.dateFormater
-import com.bhatia.budgettracker.util.themeColor
-import com.bhatia.budgettracker.util.whiteColor
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.model.Transaction
+import com.bhatia.trackify.ui.theme.latoFamily
+import com.bhatia.trackify.util.CurrencyFormatter
+import com.bhatia.trackify.util.DatePickerDropdown
+import com.bhatia.trackify.util.OutlineTextField
+import com.bhatia.trackify.util.TransactionData.creditCategories
+import com.bhatia.trackify.util.TransactionData.debitCategories
+import com.bhatia.trackify.util.UpdateBalance
+import com.bhatia.trackify.util.background
+import com.bhatia.trackify.util.blackColor
+import com.bhatia.trackify.util.dateFormater
+import com.bhatia.trackify.util.themeColor
+import com.bhatia.trackify.util.whiteColor
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

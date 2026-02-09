@@ -1,7 +1,7 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
-import com.bhatia.budgettracker.model.Balance
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.model.Balance
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 object UpdateBalance {
 

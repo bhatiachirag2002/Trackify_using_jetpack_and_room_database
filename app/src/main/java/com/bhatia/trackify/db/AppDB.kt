@@ -1,11 +1,11 @@
-package com.bhatia.budgettracker.db
+package com.bhatia.trackify.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.bhatia.budgettracker.model.Balance
-import com.bhatia.budgettracker.model.Transaction
+import com.bhatia.trackify.model.Balance
+import com.bhatia.trackify.model.Transaction
 
 @Database(entities = [Balance::class, Transaction::class], version = 1, exportSchema = false)
 abstract class AppDB : RoomDatabase() {

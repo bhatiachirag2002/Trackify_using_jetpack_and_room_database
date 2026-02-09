@@ -1,10 +1,10 @@
-package com.bhatia.budgettracker.repository
+package com.bhatia.trackify.repository
 
 import android.content.SharedPreferences
 import android.text.format.DateFormat
-import com.bhatia.budgettracker.db.AppDB
-import com.bhatia.budgettracker.model.Balance
-import com.bhatia.budgettracker.model.Transaction
+import com.bhatia.trackify.db.AppDB
+import com.bhatia.trackify.model.Balance
+import com.bhatia.trackify.model.Transaction
 import java.util.Date
 
 

@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 
 import androidx.compose.foundation.layout.Box
@@ -29,8 +29,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.bhatia.budgettracker.util.themeColor
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.util.themeColor
+import com.bhatia.trackify.viewmodel.AppViewModel
 
 @Composable
 fun Dashboard(mainNavController: NavController, appViewModel: AppViewModel) {

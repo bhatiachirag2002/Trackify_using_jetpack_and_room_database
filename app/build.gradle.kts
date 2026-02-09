@@ -3,16 +3,17 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
     id ("kotlin-parcelize")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.bhatia.budgettracker"
-    compileSdk = 34
+    namespace = "com.bhatia.trackify"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.bhatia.budgettracker"
+        applicationId = "com.bhatia.trackify"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -41,9 +42,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -61,7 +59,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.ui.test.junit4.desktop)
+//    implementation(libs.androidx.ui.test.junit4.desktop)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

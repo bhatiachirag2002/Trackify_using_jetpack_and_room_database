@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 import android.content.Context
 import android.os.Bundle
@@ -18,12 +18,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.bhatia.budgettracker.R
-import com.bhatia.budgettracker.db.AppDB
-import com.bhatia.budgettracker.repository.AppRepo
-import com.bhatia.budgettracker.ui.theme.BudgetTrackerTheme
-import com.bhatia.budgettracker.viewmodel.AppViewModel
-import com.bhatia.budgettracker.viewmodel.AppViewModelFactory
+import com.bhatia.trackify.R
+import com.bhatia.trackify.db.AppDB
+import com.bhatia.trackify.repository.AppRepo
+import com.bhatia.trackify.ui.theme.BudgetTrackerTheme
+import com.bhatia.trackify.viewmodel.AppViewModel
+import com.bhatia.trackify.viewmodel.AppViewModelFactory
 
 class MainActivity : ComponentActivity() {
 

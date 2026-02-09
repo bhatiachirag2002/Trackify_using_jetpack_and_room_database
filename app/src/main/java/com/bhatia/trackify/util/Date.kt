@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.util
+package com.bhatia.trackify.util
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -18,7 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

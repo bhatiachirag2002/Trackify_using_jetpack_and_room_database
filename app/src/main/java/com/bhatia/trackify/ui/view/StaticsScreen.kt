@@ -1,4 +1,4 @@
-package com.bhatia.budgettracker.ui.view
+package com.bhatia.trackify.ui.view
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -32,24 +32,24 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bhatia.budgettracker.model.Transaction
-import com.bhatia.budgettracker.ui.theme.latoFamily
-import com.bhatia.budgettracker.util.CurrencyFormatter
-import com.bhatia.budgettracker.util.EmptyTransactionMessage
-import com.bhatia.budgettracker.util.TransactionCard
-import com.bhatia.budgettracker.util.TransactionChips
-import com.bhatia.budgettracker.util.TransactionData
-import com.bhatia.budgettracker.util.background
-import com.bhatia.budgettracker.util.blackColor
-import com.bhatia.budgettracker.util.dateFormater
-import com.bhatia.budgettracker.util.getCategoryColor
-import com.bhatia.budgettracker.util.getCategoryIcon
-import com.bhatia.budgettracker.util.getEndOfYear
-import com.bhatia.budgettracker.util.getStartOfYear
-import com.bhatia.budgettracker.util.getTypeColor
-import com.bhatia.budgettracker.util.monthFormater
-import com.bhatia.budgettracker.util.whiteColor
-import com.bhatia.budgettracker.viewmodel.AppViewModel
+import com.bhatia.trackify.model.Transaction
+import com.bhatia.trackify.ui.theme.latoFamily
+import com.bhatia.trackify.util.CurrencyFormatter
+import com.bhatia.trackify.util.EmptyTransactionMessage
+import com.bhatia.trackify.util.TransactionCard
+import com.bhatia.trackify.util.TransactionChips
+import com.bhatia.trackify.util.TransactionData
+import com.bhatia.trackify.util.background
+import com.bhatia.trackify.util.blackColor
+import com.bhatia.trackify.util.dateFormater
+import com.bhatia.trackify.util.getCategoryColor
+import com.bhatia.trackify.util.getCategoryIcon
+import com.bhatia.trackify.util.getEndOfYear
+import com.bhatia.trackify.util.getStartOfYear
+import com.bhatia.trackify.util.getTypeColor
+import com.bhatia.trackify.util.monthFormater
+import com.bhatia.trackify.util.whiteColor
+import com.bhatia.trackify.viewmodel.AppViewModel
 import java.util.Calendar
 
 
